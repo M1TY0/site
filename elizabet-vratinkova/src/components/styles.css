@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    box-sizing: border-box;
+    
+}
+
+html
+{
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.app
+{
+    margin: 5em;
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.website-nav
+{
+   display: flex;
+   justify-content: center;
+   background: linear-gradient(90deg, rgb(187, 87, 87), rgb(131, 53, 53));
+   text-align: center;
+   border-top-left-radius: 1em;
+   border-top-right-radius: 1em;
+   padding: 1em;
+}
+
+.website-nav *
+{
+    color: white;
+}
+.earth-icon
+{
+    font-size: 1.3em;
+}
+
+.google-maps-link
+{
+    color: gray;
+    text-decoration: underline;
+    font-weight: 700;
+    padding-left: 2em;
+}
+
+.location-icon
+{
+    color: rgb(187, 87, 87);
+}
+
+.website-main
+{
+    display: flex;
+    flex-direction: column;
+    margin: 2.5em 5em;
+    gap: 3em;
+}
+
+.travel-main
+{
+    display: block;
+    margin: 1em 3em;
+}
+
+.post-location
+{
+    display: flex;
+    padding: 0 3em;
+}
+
+.travel-image
+{
+    border-radius: 0.5em;
+    width: 15em;
+    height: 20em;
+    object-fit: cover;
+    float: left;
+}
+
+.travel-post
+{
+    float: right;
+}
+
+.travel-title
+{
+    margin: 0;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.travel-main-info
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+}
+
+.travel-location
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.travel-desc
+{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.travel-date
+{
+    margin-top: 3em;
+    font-weight: 700;
+}
