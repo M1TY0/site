@@ -20,8 +20,9 @@ body{
     padding: 2em 0 0 0;
     background-image: url(/src/images/background-image.png);
     background-repeat: no-repeat;
-    background-position: right -10%;
+    background-position: right -5%;
     background-position-x: 110%;
+    background-size: 40%;
 }
 
 /* nav menu */
@@ -252,4 +253,32 @@ body{
 
 .product--info{
     padding: 0.5em 0 1em 1em;
+}
+
+/* log in and sign up */
+
+.login--button,
+.signup--button{
+    text-decoration: none;
+    color: black;
+    width: 5em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: rgb(212, 212, 188);
+    border: 1px solid #774936;
+    border-radius: 0.5em;
+    text-align: center;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.login--button:hover, .signup--button:hover{
+    cursor: pointer;
+}
+
+
+
+.register--container{
+    display: flex;
+    
+    gap: 1em;
 }

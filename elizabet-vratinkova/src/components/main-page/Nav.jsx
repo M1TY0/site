@@ -1,6 +1,12 @@
 import React from "react"
+import ProfileButton from "./displays/ProfileButton"
+import Register from "./displays/Register"
 
 export default function Nav(){
+
+    const [loggedIn, setLoggedIn] = React.useState(false)
+
+    let logged = loggedIn ? <ProfileButton url="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGVmYXVsdCUyMHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" /> : <Register/>
 
     return(
         <div className="nav--container">
@@ -14,11 +20,7 @@ export default function Nav(){
                 <input  type="text" id="searchbar" name="searchbar" placeholder="Search Products..." className="search--bar"/>
             </div>
             
-            <div className="profile--container">
-               <a href="profile.html">
-                <img className="profile--pic" src="src\images\avatar-picture.png" alt="profile-pic" />
-                </a> 
-            </div>
+            {logged}
         </div>
     )
 

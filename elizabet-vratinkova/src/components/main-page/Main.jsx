@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom";
 import productsData from "./data/productsData";
-import Product from "./Products";
+import Product from "./displays/Products";
 
 export default function Main(props) {
 
