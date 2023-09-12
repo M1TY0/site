@@ -1,3 +1,5 @@
+
+
 *,
 ::before,
 ::after{
@@ -19,7 +21,7 @@ body{
 /* header */
 
 .signup--logo{
-    height: 10em;
+    height: 7em;
 }
 
 .signup--header{
@@ -27,12 +29,84 @@ body{
     padding-top: 3em;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1.5em;
 }
 
 .signup--text{
-    font-size: 5em;
+    font-size: 4em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* main info */
 
+.signup--main{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245,227,199);
+    padding: 5em;
+    margin: 2em 7em;
+    border: 0.3em solid gray;
+    border-radius: 1em;
+    text-align: center; /* Center the text inside the container */
+    margin: 0 auto; /* Center the container horizontally */
+    max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.user--label,
+.email--label,
+.password--label{
+    font-size: 1.5em;
+    text-align: left;
+    margin-left: 0.5em;
+}
+
+.user--input,
+.email--input,
+.password--input{
+    height: 2.4em;
+    border-radius: 1em;
+    border: 0;
+    margin-top: 0.5em;
+    padding-left: 0.7em;
+}
+
+.user--icon,
+.email--icon,
+.password--icon{
+    pointer-events: none;
+    position: relative;
+    top: -24px;
+    left: 175px;
+    color: gray;
+}
+
+.pfp--label{
+    font-size: 1.2em;
+}
+
+.pfp--button{
+    max-width: 15em;
+}
+
+.pfp--container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1em 0;
+}
+
+.signup--submit{
+    margin-top: 4em;
+    width: 15em;
+    height: 4em;
+    align-self: center;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 1em;
+    border: 0;
+    background-color: rgb(128, 128, 128);
+}
+
+.signup--submit:hover{
+    background-color: rgba(128, 128, 128, 0.8);
+}

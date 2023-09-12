@@ -6,7 +6,7 @@ export default function Nav(){
 
     const [loggedIn, setLoggedIn] = React.useState(false)
 
-    let logged = loggedIn ? <ProfileButton url="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGVmYXVsdCUyMHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" /> : <Register/>
+    let logged = loggedIn ? <ProfileButton url="src\images\avatar-picture.png" /> : <Register/>
 
     return(
         <div className="nav--container">

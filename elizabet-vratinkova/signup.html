@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="src/signupstyles.css">
     <title>Sign Up to Bitak.</title>
 </head>
 <body>
     <header class="signup--header">
         <img class="signup--logo" src="/src/images/chicken-logo.png" alt="">
-        <h1 class="signup--text">Sign Up</h1>
+        <h1 class="signup--text">Sign Up.</h1>
     </header>
 
-    <main>
+    <div class="signup--main">
+        <label class="user--label" for="username">Enter Username:</label>
+        <input class="user--input" type="text" name="username">
+        <i class="fa-solid fa-user user--icon"></i>
 
-    </main>
+        <label class="email--label" for="email">Enter E-mail:</label>
+        <input class="email--input" type="text" name="email">
+        <i class="fa-solid fa-envelope email--icon"></i>
+
+        <label class="password--label" for="password">Enter Password:</label>
+        <input class="password--input" type="text" name="password">
+        <i class="fa-solid fa-lock password--icon"></i>
+        
+        <div class="pfp--container">
+            <label class="pfp--label" for="pfp">Select Profile Picture:</label>
+            <input class="pfp--button" type="file" name="pfp">
+        </div>
+        <button class="signup--submit">Sign Up</button>
+    </div>
 </body>
 </html>
