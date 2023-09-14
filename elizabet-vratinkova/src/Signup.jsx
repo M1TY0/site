@@ -22,6 +22,7 @@ export default function SignUp(){
 
         })
     }
+
     return(
         <div>
             <header class="signup--header">
@@ -31,29 +32,41 @@ export default function SignUp(){
 
             <div class="signup--main">
                 <div className="username--container">
-                    <label className="user--label" for="username">Enter Username:</label>
-                    <input onChange={handleChange} className="user--input" type="text" name="username"/>
+                    <label className="user--label" htmlFor="username">Enter Username:</label>
+                    <input onChange={handleChange}
+                           className="user--input"
+                           type="text"
+                           name="username"
+                           value={inputData.username}/>
                     <i className="fa-solid fa-user user--icon"></i>
                 </div>
 
                 <div className="email--container">
-                    <label class="email--label" for="email">Enter E-mail:</label>
-                    <input onChange={handleChange} class="email--input" type="text" name="email"/>
+                    <label class="email--label" htmlFor="email">Enter E-mail:</label>
+                    <input onChange={handleChange}
+                           class="email--input"
+                           type="email"
+                           name="email"
+                           value={inputData.email}/>
                     <i class="fa-solid fa-envelope email--icon"></i>
                 </div>
             
                 <div className="password--container">
-                    <label class="password--label" for="password">Enter Password:</label>
-                    <input onChange={handleChange} class="password--input" type="text" name="password"/>
+                    <label class="password--label" htmlFor="password">Enter Password:</label>
+                    <input  onChange={handleChange}
+                            class="password--input"
+                            type="password"
+                            name="password"
+                            value={inputData.password}/>
                     <i class="fa-solid fa-lock password--icon"></i>
                 </div>
             
                 <div class="pfp--container">
-                    <label class="pfp--label" for="pfp">Select Profile Picture:</label>
+                    <label class="pfp--label" htmlFor="pfp">Select Profile Picture:</label>
                     <input class="pfp--button" type="file" name="pfp"/>
                 </div>
 
-                <button class="signup--submit">Create Account</button>
+                <input value="Create Account" type="submit" onClick={() => console.log(inputData)} class="signup--submit"/>
             </div>
         </div>
     )
