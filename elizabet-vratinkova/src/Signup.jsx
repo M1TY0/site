@@ -11,26 +11,39 @@ export default function SignUp(){
     const [inputData, setInputData] = React.useState(
         {username: "", email: "", password: ""})
 
-    console.log(inputData)
-
     function handleChange(event){
+        const {name, value} = event.target
         setInputData(prevData => {
             return {
                 ...prevData,
-                [event.target.name]: event.target.value 
+                [name]: value 
             }
 
         })
     }
 
+    function handleSubmit(event){
+        event.preventDefault()
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          
+          fetch("https://localhost:7280/User?email=ivan%40gmail&username=ivan69&password=ivanegotin&pictureURL=picture.picture.com&location=sofia%20bulgaria", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+    }
+
     return(
         <div>
-            <header class="signup--header">
-                <img class="signup--logo" src="/src/images/chicken-logo.png" alt=""/>
-                <h1 class="signup--text">Sign Up.</h1>
+            <header className="signup--header">
+                <img className="signup--logo" src="/src/images/chicken-logo.png" alt=""/>
+                <h1 className="signup--text">Sign Up.</h1>
             </header>
 
-            <div class="signup--main">
+            <form onSubmit={handleSubmit} className="signup--main">
                 <div className="username--container">
                     <label className="user--label" htmlFor="username">Enter Username:</label>
                     <input onChange={handleChange}
@@ -42,32 +55,27 @@ export default function SignUp(){
                 </div>
 
                 <div className="email--container">
-                    <label class="email--label" htmlFor="email">Enter E-mail:</label>
+                    <label className="email--label" htmlFor="email">Enter E-mail:</label>
                     <input onChange={handleChange}
-                           class="email--input"
+                           className="email--input"
                            type="email"
                            name="email"
                            value={inputData.email}/>
-                    <i class="fa-solid fa-envelope email--icon"></i>
+                    <i className="fa-solid fa-envelope email--icon"></i>
                 </div>
             
                 <div className="password--container">
-                    <label class="password--label" htmlFor="password">Enter Password:</label>
+                    <label className="password--label" htmlFor="password">Enter Password:</label>
                     <input  onChange={handleChange}
-                            class="password--input"
+                            className="password--input"
                             type="password"
                             name="password"
                             value={inputData.password}/>
-                    <i class="fa-solid fa-lock password--icon"></i>
-                </div>
-            
-                <div class="pfp--container">
-                    <label class="pfp--label" htmlFor="pfp">Select Profile Picture:</label>
-                    <input class="pfp--button" type="file" name="pfp"/>
+                    <i className="fa-solid fa-lock password--icon"></i>
                 </div>
 
-                <input value="Create Account" type="submit" onClick={() => console.log(inputData)} class="signup--submit"/>
-            </div>
+                <input value="Create Account" type="submit" className="signup--submit"/>
+            </form>
         </div>
     )
 }
