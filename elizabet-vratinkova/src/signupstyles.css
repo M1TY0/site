@@ -52,6 +52,13 @@ body{
     max-width: 400px; /* Adjust the maximum width as needed */
 }
 
+.username--container,
+.password--container,
+.email--container{
+    display: flex;
+    flex-direction: column;
+}
+
 .user--label,
 .email--label,
 .password--label{
@@ -109,4 +116,5 @@ body{
 
 .signup--submit:hover{
     background-color: rgba(128, 128, 128, 0.8);
+    cursor: pointer;
 }
