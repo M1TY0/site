@@ -24,12 +24,15 @@ export default function SignUp(){
 
     function handleSubmit(event){
         event.preventDefault()
+
+        const {user, email, password} = inputData
+
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
           };
           
-          fetch("https://localhost:7280/User?email=ivan%40gmail&username=ivan69&password=ivanegotin&pictureURL=picture.picture.com&location=sofia%20bulgaria", requestOptions)
+          fetch($`https://localhost:7280/User?email=${email}&username=${user}&password=${password}&pictureURL=picture.picture.com&location=sofia%20bulgaria`, requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
