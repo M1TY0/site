@@ -8,8 +8,10 @@ import ProfileForm from "./components/signup-page/Profile";
 
 export default function SignUp(){
 
-    const [inputData, setInputData] = React.useState(
-        {username: "", email: "", password: ""})
+    const [inputData, setInputData] = React.useState({
+        username: "",
+        email: "",
+        password: ""})
 
     function handleChange(event){
         const {name, value} = event.target
@@ -25,14 +27,12 @@ export default function SignUp(){
     function handleSubmit(event){
         event.preventDefault()
 
-        const {user, email, password} = inputData
-
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
           };
           
-          fetch($`https://localhost:7280/User?email=${email}&username=${user}&password=${password}&pictureURL=picture.picture.com&location=sofia%20bulgaria`, requestOptions)
+          fetch(`https://localhost:7280/User?email=${inputData.email}&username=${inputData.username}&password=${inputData.password}&pictureURL=picture.picture.com&location=sofia%20bulgaria`, requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
