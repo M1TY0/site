@@ -28,7 +28,7 @@ export default function SignUp(){
         event.preventDefault()
 
         var requestOptions = {
-            method: 'GET',
+            method: 'POST',
             redirect: 'follow'
           };
           
@@ -36,7 +36,11 @@ export default function SignUp(){
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
-
+            
+ if(response.text == "done")
+ {
+    window.open('https://www.youtube.com', '_blank');
+ }
     }
 
     return(
