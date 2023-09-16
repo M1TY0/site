@@ -16,7 +16,7 @@ export default function Nav(){
             </a>
             
             <div className="search--bar--container">
-                <label for="searchbar"><i class="fa-solid fa-magnifying-glass search--bar--icon"></i></label>
+                <label htmlFor="searchbar"><i className="fa-solid fa-magnifying-glass search--bar--icon"></i></label>
                 <input  type="text" id="searchbar" name="searchbar" placeholder="Search Products..." className="search--bar"/>
             </div>
             

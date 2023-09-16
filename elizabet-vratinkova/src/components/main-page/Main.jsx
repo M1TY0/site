@@ -1,21 +1,28 @@
 import React from "react"
 import ReactDOM from "react-dom";
-import productsData from "./data/productsData";
+import getProduct from "./data/productsData";
 import Product from "./displays/Products";
 
 export default function Main(props) {
-
-    const productListing = productsData.map(product => {
-        return (<Product 
-        name={product.name} 
-        price={product.price}
-        date={product.date}
-        description={product.description}
-        pictureURL={product.pictureURL}
-        location={product.location}/>) })
+  
 
     
-    
+    const getProductData=async function () {
+        const res = await getProduct()
+        console.log(res);
+        return res.name;
+        
+        
+    }
+      
+  
+   function returnProduct(){
+    const product3 = getProductData()
+   return <Product name={product3} 
+                   description="{product3.description} "
+                   location="{product3.location}"
+                   price="{product3.price}"/>
+   }
     return(
         <div className="site--info--container">
             <div className="main--info--container">
@@ -25,7 +32,7 @@ export default function Main(props) {
                 <p>Get ready to embark on a treasure-hunting 
                     journey where you'll find a vast array of incredible items at unbeatable prices.
                 </p>
-                <button className="shopping--button">Start Shopping</button>
+                <button onClick={getProductData} className="shopping--button">Start Shopping</button>
                 </div>
                 
                 <div className="site--info--picture">
@@ -35,7 +42,8 @@ export default function Main(props) {
             
             <div className="product--list--container">
                 <h1 className="product--header">Deals</h1>
-                <span className="product--listing">{productListing} <i class="fa-solid fa-arrows-rotate products--refresh--icon"></i></span>
+                
+                { <span className="product--listing"> {returnProduct()}<i class="fa-solid fa-arrows-rotate products--refresh--icon"></i></span> }
                 
             </div>
             
