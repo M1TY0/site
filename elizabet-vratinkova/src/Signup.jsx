@@ -19,6 +19,7 @@ export default function SignUp(){
         })
     }
     function handleSubmit(event){
+      
         event.preventDefault()
         var requestOptions = {
             method: 'POST',
@@ -27,7 +28,7 @@ export default function SignUp(){
           fetch(`https://localhost:7280/User?email=${inputData.email}&username=${inputData.username}&password=${inputData.password}&pictureURL=picture.picture.com&location=sofia%20bulgaria`, requestOptions)
             .then(response => response.text())
             .then(result =>  {if(result=="done"){ window.location.href = "./login.html"}})
-            .catch(error => console.log('error', error));
+            .catch(error =>);
     }
     return(
         <div>
@@ -62,6 +63,9 @@ export default function SignUp(){
                             name="password"
                             value={inputData.password}/>
                     <i className="fa-solid fa-lock password--icon"></i>
+                </div>
+                <div id="error">
+                    <p></p>
                 </div>
                 <input value="Create Account" type="submit" className="signup--submit"/>
             </form>
