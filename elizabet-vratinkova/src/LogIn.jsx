@@ -17,6 +17,8 @@ export default function SignUp(){
             }
         })
     }
+ 
+      
     function handleSubmit(event){
         event.preventDefault()
         var requestOptions = {
@@ -25,8 +27,10 @@ export default function SignUp(){
           };
           fetch(`https://localhost:7280/Password?username=${inputData.username}&password=${inputData.password}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => {if(result=="correct password"){ window.location.href = "../home.html"}})
             .catch(error => console.log('error', error));
+            let response2 = result;
+            
     }
     return(
         <div>
