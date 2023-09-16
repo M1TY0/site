@@ -10,7 +10,7 @@ export default function Nav(){
 
     return(
         <div className="nav--container">
-            <a href="index.html" className="site--logo">
+            <a href="home.html" className="site--logo">
                 <img className="site--logo--image" src="src\images\chicken-logo.png" alt="" />
                 <p className="site--logo--text">bitak.</p>
             </a>
